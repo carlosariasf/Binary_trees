@@ -6,15 +6,13 @@
 **/
 int left(const binary_tree_t *tree)
 {
+	int count = 0;
 	if (!tree)
-		return (0);
-	left(tree->left);
+		return (count);
+
+	count += 1 + left(tree->left);
 	left(tree->right);
-	if (tree->left == NULL && tree->right == NULL)
-		return (0);
-	if (tree->left == NULL)
-		return (0);
-	return (left(tree->left) + 1);
+	return (count);
 }
 /**
  * right - number of nodes
@@ -23,15 +21,14 @@ int left(const binary_tree_t *tree)
 **/
 int right(const binary_tree_t *tree)
 {
+        int count = 0;
 	if (!tree)
-		return (0);
-	right(tree->left);
-	right(tree->right);
-	if (tree->left == NULL && tree->right == NULL)
-		return (0);
-	if (tree->right == NULL)
-		return (0);
-	return (right(tree->right) + 1);
+		return (count);
+
+ 	right(tree->left);
+ 	count += 1 + right(tree->right);
+        
+	return count;
 }
 /**
  * binary_tree_balance - balances
@@ -42,7 +39,10 @@ int binary_tree_balance(const binary_tree_t *tree)
 {
 	int a = 0, b = 0;
 
+	if (!tree)
+		return (0);
 	a = left(tree);
 	b = right(tree);
+
 	return (a - b);
 }
