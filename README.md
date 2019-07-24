@@ -19,4 +19,4 @@ And value is the value to put in the new node
 When created, a node does not have any child
 Your function must return a pointer to the new node, or NULL on failure
 
-1.
+1 h.
