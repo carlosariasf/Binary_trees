@@ -6,16 +6,13 @@
 **/
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-	binary_tree_t *tmp = NULL;
-
 	if (!node)
 		return (NULL);
 	if (!node->parent)
 		return (NULL);
-	tmp = node->parent;
-	if (tmp->left == NULL|| tmp->right == NULL)
+	if (node->parent->left == NULL || node->parent->right == NULL)
 		return (NULL);
-	if (tmp->left->n == node->n)
-		return (tmp->right);
-	return (tmp->left);
+	if (node->parent->left->n == node->n)
+		return (node->parent->right);
+	return (node->parent->left);
 }
