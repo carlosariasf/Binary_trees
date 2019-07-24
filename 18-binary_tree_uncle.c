@@ -9,9 +9,9 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	binary_tree_t *tmp = node;
 
 	if (!node)
-		return (0);
+		return (NULL);
 	if (!node->parent->parent)
-		return (0);
+		return (NULL);
 	tmp = node->parent->parent;
 	if (tmp->left->n == node->parent->n)
 		return (tmp->right);
