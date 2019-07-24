@@ -7,11 +7,12 @@
 int left(const binary_tree_t *tree)
 {
 	int count = 0;
+
 	if (!tree)
 		return (count);
-
 	count += 1 + left(tree->left);
 	left(tree->right);
+
 	return (count);
 }
 /**
@@ -21,14 +22,14 @@ int left(const binary_tree_t *tree)
 **/
 int right(const binary_tree_t *tree)
 {
-        int count = 0;
+	int count = 0;
+
 	if (!tree)
 		return (count);
+	right(tree->left);
+	count += 1 + right(tree->right);
 
- 	right(tree->left);
- 	count += 1 + right(tree->right);
-        
-	return count;
+	return (count);
 }
 /**
  * binary_tree_balance - balances
