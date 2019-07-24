@@ -6,14 +6,14 @@
 **/
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
-	binary_tree_t *tmp = NULL;
-
 	if (!node)
 		return (NULL);
 	if (!node->parent->parent)
 		return (NULL);
-	tmp = node->parent->parent;
-	if (tmp->left->n == node->parent->n)
-		return (tmp->right);
-	return (tmp->left);
+	if (node->parent->parent->left == NULL ||
+	node->parent->parent->right == NULL)
+		return (NULL);
+	if (node->parent->parent->left->n == node->parent->n)
+		return (node->parent->parent->right);
+	return (node->parent->parent->left);
 }
