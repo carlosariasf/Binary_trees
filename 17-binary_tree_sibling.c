@@ -6,7 +6,7 @@
 **/
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-	binary_tree_t *tmp = node;
+	binary_tree_t *tmp = NULL;
 
 	if (!node)
 		return (NULL);
