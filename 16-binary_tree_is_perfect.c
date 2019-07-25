@@ -33,8 +33,8 @@ int check_is_perfect(const binary_tree_t *tree, int d, int level)
 	return (check_is_perfect(tree->left, d, level + 1) &&
 		check_is_perfect(tree->right, d, level + 1));
 }
-/*
- * Binary_tree_is_perfect - full tree
+/**
+ * binary_tree_is_perfect - full tree
  * @tree: binary tree
  * Return: 1 or 0
 **/
